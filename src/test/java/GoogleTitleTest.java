@@ -44,6 +44,7 @@ public class GoogleTitleTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(By.name("btnK"))).click();
 
+        wait.until(ExpectedConditions.textToBe(By.cssSelector("[role='list'] a:first-of-type div:first-of-type"), "All"));
         Assert.assertEquals(driver.getTitle(), "Selenium - Google Search", "Sayfa başlığı beklenen ile eşleşmiyor!");
     }
 
