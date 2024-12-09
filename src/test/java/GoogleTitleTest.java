@@ -14,7 +14,7 @@ public class GoogleTitleTest {
     public void setUp() {
 
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless"); // Headless mod
+        //options.addArguments("--headless"); // Headless mod
         options.addArguments("--disable-gpu");
         options.addArguments("--window-size=1920,1080");
         // Chrome tarayıcısını başlat
