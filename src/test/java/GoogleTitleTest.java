@@ -25,6 +25,8 @@ public class GoogleTitleTest {
         // Chrome tarayıcısını başlat
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
 
     @Test
