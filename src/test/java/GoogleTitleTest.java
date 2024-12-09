@@ -1,3 +1,4 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -14,7 +15,7 @@ public class GoogleTitleTest {
     public void setUp() {
 
         ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--headless"); // Headless mod
+        options.addArguments("--headless"); // Headless mod
         options.addArguments("--disable-gpu");
         options.addArguments("--window-size=1920,1080");
         // Chrome tarayıcısını başlat
@@ -32,6 +33,11 @@ public class GoogleTitleTest {
         String expectedTitle = "Google";
 
         Assert.assertEquals(actualTitle, expectedTitle, "Sayfa başlığı beklenen ile eşleşmiyor!");
+
+        driver.findElement(By.name("q")).sendKeys("Selenium");
+        driver.findElement(By.name("btnK")).click();
+
+        Assert.assertEquals(driver.getTitle(), "selenium - Google Search", "ayfa başlığı beklenen ile eşleşmiyor!");
     }
 
     @AfterClass
