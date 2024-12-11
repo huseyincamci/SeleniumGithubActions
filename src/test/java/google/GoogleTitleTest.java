@@ -23,12 +23,12 @@ public class GoogleTitleTest {
     public void setUp() {
 
         ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--headless"); // Headless mod
+        options.addArguments("--headless"); // Headless mod
         options.addArguments("--disable-gpu");
         options.addArguments("--window-size=1920x1080");
         //options.addArguments("--lang=");
         Map<String, Object> prefs = new HashMap<>();
-        prefs.put("intl.accept_languages", "es");
+        prefs.put("intl.accept_languages", "tr-TR");
         options.setExperimentalOption("prefs", prefs);
         // Chrome tarayıcısını başlat
         driver = new ChromeDriver(options);
