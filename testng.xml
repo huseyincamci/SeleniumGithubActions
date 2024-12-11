@@ -2,7 +2,7 @@
 <suite name="Basic Suite">
     <test name="Google Title Test">
         <classes>
-            <class name="GoogleTitleTest" />
+            <class name="google.GoogleTitleTest" />
         </classes>
     </test>
 </suite>

@@ -1,3 +1,5 @@
+package google;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,6 +24,7 @@ public class GoogleTitleTest {
         options.addArguments("--headless"); // Headless mod
         options.addArguments("--disable-gpu");
         options.addArguments("--window-size=1920x1080");
+        options.addArguments("--lang=tr");
         // Chrome tarayıcısını başlat
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
@@ -44,8 +47,8 @@ public class GoogleTitleTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(By.name("btnK"))).click();
 
-        wait.until(ExpectedConditions.textToBe(By.cssSelector("[role='list'] a:first-of-type div:first-of-type"), "All"));
-        Assert.assertEquals(driver.getTitle(), "Selenium - Google Search", "Sayfa başlığı beklenen ile eşleşmiyor!");
+        wait.until(ExpectedConditions.textToBe(By.cssSelector("[role='list'] a:first-of-type div:first-of-type"), "Tümü"));
+        Assert.assertEquals(driver.getTitle(), "Selenium - Google'da Ara", "Sayfa başlığı beklenen ile eşleşmiyor!");
     }
 
     @AfterClass
