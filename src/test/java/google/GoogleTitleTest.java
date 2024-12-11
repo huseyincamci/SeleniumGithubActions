@@ -28,7 +28,7 @@ public class GoogleTitleTest {
         options.addArguments("--window-size=1920x1080");
         //options.addArguments("--lang=");
         Map<String, Object> prefs = new HashMap<>();
-        prefs.put("intl.accept_languages", "tr-TR");
+        prefs.put("intl.accept_languages", "es");
         options.setExperimentalOption("prefs", prefs);
         // Chrome tarayıcısını başlat
         driver = new ChromeDriver(options);
