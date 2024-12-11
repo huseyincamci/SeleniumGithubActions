@@ -24,7 +24,7 @@ public class GoogleTitleTest {
         options.addArguments("--headless"); // Headless mod
         options.addArguments("--disable-gpu");
         options.addArguments("--window-size=1920x1080");
-        options.addArguments("--lang=tr");
+        options.addArguments("--lang=tr-TR");
         // Chrome tarayıcısını başlat
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
