@@ -12,6 +12,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
 
 public class GoogleTitleTest {
 
@@ -21,10 +23,13 @@ public class GoogleTitleTest {
     public void setUp() {
 
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless"); // Headless mod
+        //options.addArguments("--headless"); // Headless mod
         options.addArguments("--disable-gpu");
         options.addArguments("--window-size=1920x1080");
-        options.addArguments("--lang=tr-TR");
+        //options.addArguments("--lang=");
+        Map<String, Object> prefs = new HashMap<>();
+        prefs.put("intl.accept_languages", "en-GB");
+        options.setExperimentalOption("prefs", prefs);
         // Chrome tarayıcısını başlat
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
