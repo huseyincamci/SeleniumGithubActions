@@ -26,10 +26,10 @@ public class GoogleTitleTest {
         options.addArguments("--headless"); // Headless mod
         options.addArguments("--disable-gpu");
         options.addArguments("--window-size=1920x1080");
-        options.addArguments("--lang=tr-TR");
-       /* Map<String, Object> prefs = new HashMap<>();
+        //options.addArguments("--lang=tr-TR"); //sunucuda işe yaramıyor
+        Map<String, Object> prefs = new HashMap<>();
         prefs.put("intl.accept_languages", "tr-TR");
-        options.setExperimentalOption("prefs", prefs);*/
+        options.setExperimentalOption("prefs", prefs);
         // Chrome tarayıcısını başlat
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
